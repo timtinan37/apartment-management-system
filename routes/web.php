@@ -13,11 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes(['register' => false]);
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function ()
+Route::group(['middleware' => 'auth', 'prefix' => '/dashboard', 'as' => 'dashboard.'], function ()
 {
-	return view('backend.layout');
+	Route::get('/', function ()
+	{
+		return view('backend.index');
+	})->name('index');
 });
+
+Route::get('/home', 'HomeController@index')->name('home');
