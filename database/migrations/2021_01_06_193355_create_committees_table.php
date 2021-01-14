@@ -31,7 +31,6 @@ class CreateCommitteesTable extends Migration
             $table->unsignedBigInteger('treasurer_id')->nullable();
             $table->foreign('treasurer_id')->references('id')->on('users')->onDelete('set null');
             $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
-            $table->dateTime('deactivated_at', 0)->nullable();
             $table->timestamps();
         });
     }

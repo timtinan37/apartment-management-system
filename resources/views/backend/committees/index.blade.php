@@ -1,8 +1,8 @@
 @extends('backend.layout')
 
-@section('title', 'Committee Lists')
-@section('page-title', 'Committee Lists')
-@section('page-title-subheading', 'Showing Committee Lists')
+@section('title', 'Committees List')
+@section('page-title', 'Committees List')
+@section('page-title-subheading', 'Showing Committees List')
 
 @section('main')
     <div class="main-card mb-3 card">

@@ -22,9 +22,14 @@ class RolesAndPermissionsSeeder extends Seeder
         Role::create(['name' => 'Assistant General Secretary']);
         Role::create(['name' => 'Treasurer']);
 
-        Permission::create(['name' => 'create committee']);
-        Permission::create(['name' => 'view committee']);
-        Permission::create(['name' => 'update committee']);
-        Permission::create(['name' => 'delete committee']);
+        Permission::create(['name' => 'create committee', 'group' => 'committee']);
+        Permission::create(['name' => 'view committee', 'group' => 'committee']);
+        Permission::create(['name' => 'update committee', 'group' => 'committee']);
+        Permission::create(['name' => 'delete committee', 'group' => 'committee']);
+
+        Permission::create(['name' => 'create flat', 'group' => 'flat']);
+        Permission::create(['name' => 'view flat', 'group' => 'flat']);
+        Permission::create(['name' => 'update flat', 'group' => 'flat']);
+        Permission::create(['name' => 'delete flat', 'group' => 'flat']);
     }
 }

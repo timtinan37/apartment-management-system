@@ -18,7 +18,6 @@ class Committee extends Model
 		'treasurer',
 		'treasurer_id',
 		'status',
-		'deactivated_at',
     ];
 
     public function prepareCommitteeArray($request)

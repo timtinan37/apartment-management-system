@@ -26,4 +26,5 @@ Route::group(['middleware' => 'auth', 'prefix' => '/dashboard', 'as' => 'dashboa
 	})->name('index');
 
 	Route::resource('committees', 'Backend\CommitteeController');
+	Route::resource('flats', 'Backend\FlatController');
 });
