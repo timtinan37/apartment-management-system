@@ -50,4 +50,26 @@
                                         </ul>
                                     </li>
                                 @endcanany
+                                @canany(['create resident', 'view resident'])
+                                    <li class="app-sidebar__heading">
+                                        <i class="metismenu-icon pe-7s-pin"></i>
+                                        <a href="#">Residents<i class="metismenu-state-icon pe-7s-angle-down caret-left"></i></a>
+                                        <ul>
+                                            @can('view resident')
+                                                <li>
+                                                    <a href="{{ route('dashboard.residents.index') }}">
+                                                        List
+                                                    </a>
+                                                </li>
+                                            @endcan
+                                            @can('create resident')
+                                                <li>
+                                                    <a href="{{ route('dashboard.residents.create') }}">
+                                                        Create
+                                                    </a>
+                                                </li>
+                                            @endcan
+                                        </ul>
+                                    </li>
+                                @endcanany
                             </ul>

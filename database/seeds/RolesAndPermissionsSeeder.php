@@ -31,5 +31,10 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'view flat', 'group' => 'flat']);
         Permission::create(['name' => 'update flat', 'group' => 'flat']);
         Permission::create(['name' => 'delete flat', 'group' => 'flat']);
+
+        Permission::create(['name' => 'create resident', 'group' => 'resident']);
+        Permission::create(['name' => 'view resident', 'group' => 'resident']);
+        Permission::create(['name' => 'update resident', 'group' => 'resident']);
+        Permission::create(['name' => 'delete resident', 'group' => 'resident']);
     }
 }

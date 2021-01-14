@@ -27,7 +27,7 @@ class FlatController extends Controller
      */
     public function index()
     {
-        $flats = $this->flat->paginate(10);
+        $flats = $this->flat->with('owner')->paginate(10);
 
         return View::make('backend.flats.index', compact('flats'));
     }
@@ -94,7 +94,7 @@ class FlatController extends Controller
         $flatArray = $this->flat->prepareFlatArray($request);
         $flat->update($flatArray);
 
-        return redirect()->route('dashboard.flats.show', $flat->id)->with('status', 'Flat updated.');   
+        return redirect()->route('dashboard.flats.show', $flat->id)->with('status', 'Flat updated.');
     }
 
     /**

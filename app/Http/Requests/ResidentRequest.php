@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class FlatRequest extends FormRequest
+class ResidentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,9 +24,9 @@ class FlatRequest extends FormRequest
     public function rules()
     {
         return [
-            'flat_no' => ['required', 'string', Rule::unique('flats')->ignore($this->flat)],
-            'floor' => ['required', 'integer', 'gte:0'],
-            'owner' => ['required', 'integer', 'gt:0'],
+            'contact_person' => ['required', 'integer', 'gt:0'],
+            'flat' => ['required', 'integer', 'gt:0'],
+            'no_of_habitats' => ['required', 'integer', 'gt:0'],
         ];
     }
 }

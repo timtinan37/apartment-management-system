@@ -61,6 +61,7 @@
                                 <td>{{ $committee->updated_at }}</td>
                                 <td>{{ $committee->status }}</td>
                                 <td class="text-center">
+                                    <a href="{{ route('dashboard.committees.show', $committee->id) }}"><button class="btn btn-link" type="button">View</button></a>
                                     @can('update committee')
                                         <a href="{{ route('dashboard.committees.edit', $committee->id) }}"><button type="button" class="btn btn-link">Edit</button></a><br>
                                     @endcan
