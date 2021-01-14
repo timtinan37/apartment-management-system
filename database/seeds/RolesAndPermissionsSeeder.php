@@ -15,5 +15,16 @@ class RolesAndPermissionsSeeder extends Seeder
         Role::create(['name' => 'Super Admin']);
         $superAdmin = User::find(1);
         $superAdmin->assignRole('Super Admin');
+
+        Role::create(['name' => 'President']);
+        Role::create(['name' => 'Vice President']);
+        Role::create(['name' => 'General Secretary']);
+        Role::create(['name' => 'Assistant General Secretary']);
+        Role::create(['name' => 'Treasurer']);
+
+        Permission::create(['name' => 'create committee']);
+        Permission::create(['name' => 'view committee']);
+        Permission::create(['name' => 'update committee']);
+        Permission::create(['name' => 'delete committee']);
     }
 }

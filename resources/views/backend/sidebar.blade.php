@@ -1,13 +1,26 @@
 
                             <ul class="vertical-nav-menu">
                                 <li class="app-sidebar__heading"><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
-                                <li class="app-sidebar__heading">Committees</li>
-                                <li>
-                                    <a href="#">
-                                        <i class="metismenu-icon pe-7s-pin"></i>
-                                        List
-                                    </a>
-                                </li>
+
+                                @canany(['create committee', 'view committee'])
+                                    <li class="app-sidebar__heading">Committees</li>
+                                    @can('view committee')
+                                        <li>
+                                            <a href="{{ route('dashboard.committees.index') }}">
+                                                <i class="metismenu-icon pe-7s-pin"></i>
+                                                List
+                                            </a>
+                                        </li>
+                                    @endcan
+                                    @can('create committee')
+                                        <li>
+                                            <a href="{{ route('dashboard.committees.create') }}">
+                                                <i class="metismenu-icon pe-7s-pin"></i>
+                                                Create
+                                            </a>
+                                        </li>
+                                    @endcan
+                                @endcanany
                                 <li>
                                     <a href="#">
                                         <i class="metismenu-icon pe-7s-car"></i>

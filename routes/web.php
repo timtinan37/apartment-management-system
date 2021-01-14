@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +24,6 @@ Route::group(['middleware' => 'auth', 'prefix' => '/dashboard', 'as' => 'dashboa
 	{
 		return view('backend.index');
 	})->name('index');
-});
 
-Route::get('/home', 'HomeController@index')->name('home');
+	Route::resource('committees', 'Backend\CommitteeController');
+});
