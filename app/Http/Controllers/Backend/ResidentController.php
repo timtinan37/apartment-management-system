@@ -8,7 +8,7 @@ use App\Models\{
     Resident,
     User
 };
-use Illuminate\Http\Request;
+use App\Http\Requests\ResidentRequest;
 use Illuminate\Support\Facades\View;
 
 class ResidentController extends Controller
@@ -50,10 +50,10 @@ class ResidentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\ResidentRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ResidentRequest $request)
     {
         $residentArray = $this->resident->prepareResidentArray($request);
         $resident = $this->resident->create($residentArray);
@@ -89,11 +89,11 @@ class ResidentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\ResidentRequest  $request
      * @param  \App\Models\Resident  $resident
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Resident $resident)
+    public function update(ResidentRequest $request, Resident $resident)
     {
         $residentArray = $this->resident->prepareResidentArray($request);
         $resident->update($residentArray);

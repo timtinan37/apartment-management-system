@@ -72,4 +72,26 @@
                                         </ul>
                                     </li>
                                 @endcanany
+                                @canany(['create transaction', 'view transaction'])
+                                    <li class="app-sidebar__heading">
+                                        <i class="metismenu-icon pe-7s-pin"></i>
+                                        <a href="#">Transactions<i class="metismenu-state-icon pe-7s-angle-down caret-left"></i></a>
+                                        <ul>
+                                            @can('view transaction')
+                                                <li>
+                                                    <a href="{{ route('dashboard.transactions.index') }}">
+                                                        List
+                                                    </a>
+                                                </li>
+                                            @endcan
+                                            @can('create transaction')
+                                                <li>
+                                                    <a href="{{ route('dashboard.transactions.create') }}">
+                                                        Create
+                                                    </a>
+                                                </li>
+                                            @endcan
+                                        </ul>
+                                    </li>
+                                @endcanany
                             </ul>
