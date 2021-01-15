@@ -9,7 +9,8 @@ class Flat extends Model
     protected $fillable = [
 		'flat_no',
 		'floor',
-		'owner_id',
+        'owner_id',
+		'status',
     ];
 
     public function prepareFlatArray($request)
@@ -17,7 +18,8 @@ class Flat extends Model
     	return [
 			'flat_no' => $request->input('flat_no'),
 			'floor' => $request->input('floor'),
-			'owner_id' => $request->input('owner'),
+            'owner_id' => $request->input('owner'),
+			'status' => $request->input('status'),
     	];
     }
 

@@ -19,6 +19,7 @@ class CreateFlatsTable extends Migration
             $table->unsignedInteger('floor');
             $table->unsignedBigInteger('owner_id')->nullable();
             $table->foreign('owner_id')->references('id')->on('users')->onDelete('set null');
+            $table->enum('status', ['OCCUPIED', 'VACANT']);
             $table->timestamps();
         });
     }

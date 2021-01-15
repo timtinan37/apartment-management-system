@@ -32,6 +32,12 @@
                             </td>
                         </tr>
                         <tr>
+                            <th scope="row">Status</th>
+                            <td>
+                                {{ $flat->status }}
+                            </td>
+                        </tr>
+                        <tr>
                             <th scope="row">Created At</th>
                             <td>
                                 {{ $flat->created_at }}

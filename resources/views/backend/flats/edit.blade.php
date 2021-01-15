@@ -26,6 +26,14 @@
                         @endforeach
                     </select>
                 </div>
+                <div class="position-relative form-group">
+                    <label for="status">Status</label>
+                    <select name="status" id="status" class="form-control">
+                        @foreach (['OCCUPIED', 'VACANT'] as $status)
+                           <option value="{{ $status }}" @if($flat->status===$status) selected @endif>{{ $status }}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <button class="mt-1 btn btn-primary">Submit</button>
             </form>
         </div>

@@ -15,6 +15,7 @@
                         <th>Flat No.</th>
                         <th>Floor</th>
                         <th>Owner</th>
+                        <th>Status</th>
                         <th>Created At</th>
                         <th>Updated At</th>
                         <th>Action</th>
@@ -33,6 +34,7 @@
                                 <td>
                                     {{ $flat->owner->name }}
                                 </td>
+                                <td>{{ $flat->status }}</td>
                                 <td>{{ $flat->created_at }}</td>
                                 <td>{{ $flat->updated_at }}</td>
                                 <td class="text-center">

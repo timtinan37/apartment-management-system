@@ -28,6 +28,7 @@ class FlatRequest extends FormRequest
             'flat_no' => ['required', 'string', Rule::unique('flats')->ignore($this->flat)],
             'floor' => ['required', 'integer', 'gte:0'],
             'owner' => ['required', 'integer', 'gt:0'],
+            'status' => ['required', 'in:OCCUPIED,VACANT']
         ];
     }
 }
