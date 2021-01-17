@@ -54,5 +54,8 @@
             </div>
         </div>
     </div>
-    <a href="{{ route('dashboard.flats.edit', $flat->id) }}"><button class="btn btn-primary">Edit</button></a>
+
+    @can('update flat')
+        <a href="{{ route('dashboard.flats.edit', $flat->id) }}"><button class="btn btn-primary">Edit</button></a>
+    @endcan
 @endsection

@@ -7,7 +7,7 @@ use App\Models\{
     Flat,
     User
 };
-use App\Http\Requests\FlatRequest;
+use App\Http\Requests\Backend\FlatRequest;
 use Illuminate\Support\Facades\View;
 
 class FlatController extends Controller

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Transaction;
 use Illuminate\Support\Facades\View;
-use App\Http\Requests\TransactionRequest;
+use App\Http\Requests\Backend\TransactionRequest;
 
 class TransactionController extends Controller
 {

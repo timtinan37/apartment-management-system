@@ -29,4 +29,5 @@ Route::group(['middleware' => 'auth', 'prefix' => '/dashboard', 'as' => 'dashboa
 	Route::resource('flats', 'Backend\FlatController');
 	Route::resource('residents', 'Backend\ResidentController');
 	Route::resource('transactions', 'Backend\TransactionController');
+	Route::resource('assets', 'Backend\AssetController');
 });

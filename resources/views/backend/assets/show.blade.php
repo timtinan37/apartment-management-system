@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
-@section('title', 'Resident Details')
-@section('page-title', 'Resident Details')
+@section('title', 'Asset Details')
+@section('page-title', 'Asset Details')
 @section('page-title-subheading', '')
 
 @section('main')
@@ -12,36 +12,29 @@
                     <tbody>
                         <tr>
                             <th scope="row">ID</th>
-                            <td>{{ $resident->id }}</td>
+                            <td>{{ $asset->id }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Flat No.</th>
+                            <th scope="row">Name</th>
                             <td>
-                                {{ $resident->flat->flat_no }}
+                                {{ $asset->name }}
                             </td>
                         <tr>
-                            <th scope="row">Contact Person</th>
+                            <th scope="row">Amount</th>
                             <td>
-                                {{ $resident->contactPerson->name }}
-                                <br>Email: {{ $resident->contactPerson->email }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">No. of Habitats</th>
-                            <td>
-                                {{ $resident->no_of_habitats }}
+                                {{ $asset->amount }}
                             </td>
                         </tr>
                         <tr>
                             <th scope="row">Created At</th>
                             <td>
-                                {{ $resident->created_at }}
+                                {{ $asset->created_at }}
                             </td>
                         </tr>
                         <tr>
                             <th scope="row">Updated At</th>
                             <td>
-                                {{ $resident->updated_at }}
+                                {{ $asset->updated_at }}
                             </td>
                         </tr>
                     </tbody>
@@ -49,8 +42,8 @@
             </div>
         </div>
     </div>
-    
-    @can('update resident')
-        <a href="{{ route('dashboard.residents.edit', $resident->id) }}"><button class="btn btn-primary">Edit</button></a>
+
+    @can('update asset')
+        <a href="{{ route('dashboard.assets.edit', $asset->id) }}"><button class="btn btn-primary">Edit</button></a>
     @endcan
 @endsection

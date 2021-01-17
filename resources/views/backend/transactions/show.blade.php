@@ -48,5 +48,8 @@
             </div>
         </div>
     </div>
-    <a href="{{ route('dashboard.transactions.edit', $transaction->id) }}"><button class="btn btn-primary">Edit</button></a>
+    
+    @can('update transaction')
+        <a href="{{ route('dashboard.transactions.edit', $transaction->id) }}"><button class="btn btn-primary">Edit</button></a>
+    @endcan
 @endsection

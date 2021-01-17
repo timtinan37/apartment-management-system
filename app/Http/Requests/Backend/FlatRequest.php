@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Backend;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class TransactionRequest extends FormRequest
+class FlatRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +25,10 @@ class TransactionRequest extends FormRequest
     public function rules()
     {
         return [
-            'category' => ['required', 'in:CASH IN,CASH OUT'],
-            'description' => ['required', 'string', 'min:3', 'max:255'],
-            'amount' => ['required', 'numeric', 'min:0'],
+            'flat_no' => ['required', 'string', Rule::unique('flats')->ignore($this->flat)],
+            'floor' => ['required', 'integer', 'gte:0'],
+            'owner' => ['required', 'integer', 'gt:0'],
+            'status' => ['required', 'in:OCCUPIED,VACANT']
         ];
     }
 }

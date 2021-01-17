@@ -8,7 +8,7 @@ use App\Models\{
     Resident,
     User
 };
-use App\Http\Requests\ResidentRequest;
+use App\Http\Requests\Backend\ResidentRequest;
 use Illuminate\Support\Facades\View;
 
 class ResidentController extends Controller

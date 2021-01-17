@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Committee;
 use App\Models\User;
-use App\Http\Requests\CommitteeRequest;
+use App\Http\Requests\Backend\CommitteeRequest;
 use Illuminate\Support\Facades\View;
 
 class CommitteeController extends Controller

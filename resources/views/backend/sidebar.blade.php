@@ -94,4 +94,26 @@
                                         </ul>
                                     </li>
                                 @endcanany
+                                @canany(['create asset', 'view asset'])
+                                    <li class="app-sidebar__heading">
+                                        <i class="metismenu-icon pe-7s-pin"></i>
+                                        <a href="#">Assets<i class="metismenu-state-icon pe-7s-angle-down caret-left"></i></a>
+                                        <ul>
+                                            @can('view asset')
+                                                <li>
+                                                    <a href="{{ route('dashboard.assets.index') }}">
+                                                        List
+                                                    </a>
+                                                </li>
+                                            @endcan
+                                            @can('create asset')
+                                                <li>
+                                                    <a href="{{ route('dashboard.assets.create') }}">
+                                                        Create
+                                                    </a>
+                                                </li>
+                                            @endcan
+                                        </ul>
+                                    </li>
+                                @endcanany
                             </ul>

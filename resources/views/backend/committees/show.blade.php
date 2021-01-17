@@ -81,5 +81,8 @@
             </div>
         </div>
     </div>
-    <a href="{{ route('dashboard.committees.edit', $committee->id) }}"><button class="btn btn-primary">Edit</button></a>
+
+    @can('update committee')
+        <a href="{{ route('dashboard.committees.edit', $committee->id) }}"><button class="btn btn-primary">Edit</button></a>
+    @endcan
 @endsection

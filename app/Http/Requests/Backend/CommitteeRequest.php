@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Backend;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class FlatRequest extends FormRequest
+class CommitteeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,10 +24,11 @@ class FlatRequest extends FormRequest
     public function rules()
     {
         return [
-            'flat_no' => ['required', 'string', Rule::unique('flats')->ignore($this->flat)],
-            'floor' => ['required', 'integer', 'gte:0'],
-            'owner' => ['required', 'integer', 'gt:0'],
-            'status' => ['required', 'in:OCCUPIED,VACANT']
+            'president' => ['required', 'numeric'],
+            'vice_president' => ['required', 'numeric'],
+            'gs' => ['required', 'numeric'],
+            'ags' => ['required', 'numeric'],
+            'treasurer' => ['required', 'numeric'],
         ];
     }
 }

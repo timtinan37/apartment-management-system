@@ -41,5 +41,10 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'view transaction', 'group' => 'transaction']);
         Permission::create(['name' => 'update transaction', 'group' => 'transaction']);
         Permission::create(['name' => 'delete transaction', 'group' => 'transaction']);
+
+        Permission::create(['name' => 'create asset', 'group' => 'asset']);
+        Permission::create(['name' => 'view asset', 'group' => 'asset']);
+        Permission::create(['name' => 'update asset', 'group' => 'asset']);
+        Permission::create(['name' => 'delete asset', 'group' => 'asset']);
     }
 }
