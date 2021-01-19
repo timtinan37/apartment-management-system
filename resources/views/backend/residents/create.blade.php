@@ -18,8 +18,8 @@
                     </select>
                 </div>
                 <div class="position-relative form-group">
-                    <label for="flat_no" class="">Select Flat No.</label>
-                    <select name="flat_no" id="flat_no" class="form-control">
+                    <label for="flat" class="">Select Flat No.</label>
+                    <select name="flat" id="flat" class="form-control">
                         @foreach ($flats as $flat)
                            <option value="{{ $flat->id }}">{{ $flat->flat_no }}</option>
                         @endforeach

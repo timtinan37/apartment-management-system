@@ -26,7 +26,7 @@ class Resident extends Model
     {
     	return [
 			'contact_person' => $request->input('contact_person'),
-			'flat_id' => $request->input('flat_no'),
+			'flat_id' => $request->input('flat'),
 			'no_of_habitats' => $request->input('no_of_habitats'),
     	];
     }

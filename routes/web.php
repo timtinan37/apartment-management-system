@@ -30,4 +30,5 @@ Route::group(['middleware' => 'auth', 'prefix' => '/dashboard', 'as' => 'dashboa
 	Route::resource('residents', 'Backend\ResidentController');
 	Route::resource('transactions', 'Backend\TransactionController');
 	Route::resource('assets', 'Backend\AssetController');
+	Route::resource('resident-staffs', 'Backend\ResidentStaffController');
 });

@@ -116,4 +116,31 @@
                                         </ul>
                                     </li>
                                 @endcanany
+                                    <li class="app-sidebar__heading">
+                                        <i class="metismenu-icon pe-7s-pin"></i>
+                                        <a href="#">Staffs<i class="metismenu-state-icon pe-7s-angle-down caret-left"></i></a>
+                                        <ul>
+                                            @canany(['create resident-staff', 'view resident-staff'])
+                                            <li>
+                                                <a href="#">Resident Staffs<i class="metismenu-state-icon pe-7s-angle-down caret-left"></i></a>
+                                                <ul>
+                                                    @can('view resident-staff')
+                                                        <li>
+                                                            <a href="{{ route('dashboard.resident-staffs.index') }}">
+                                                                List
+                                                            </a>
+                                                        </li>
+                                                    @endcan
+                                                    @can('create resident-staff')
+                                                        <li>
+                                                            <a href="{{ route('dashboard.resident-staffs.create') }}">
+                                                                Create
+                                                            </a>
+                                                        </li>
+                                                    @endcan
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                @endcanany
                             </ul>
