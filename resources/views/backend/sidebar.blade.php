@@ -116,11 +116,11 @@
                                         </ul>
                                     </li>
                                 @endcanany
-                                    <li class="app-sidebar__heading">
-                                        <i class="metismenu-icon pe-7s-pin"></i>
-                                        <a href="#">Staffs<i class="metismenu-state-icon pe-7s-angle-down caret-left"></i></a>
+                                <li class="app-sidebar__heading">
+                                    <i class="metismenu-icon pe-7s-pin"></i>
+                                    <a href="#">Staffs<i class="metismenu-state-icon pe-7s-angle-down caret-left"></i></a>
+                                    @canany(['create resident-staff', 'view resident-staff'])
                                         <ul>
-                                            @canany(['create resident-staff', 'view resident-staff'])
                                             <li>
                                                 <a href="#">Resident Staffs<i class="metismenu-state-icon pe-7s-angle-down caret-left"></i></a>
                                                 <ul>
@@ -141,6 +141,29 @@
                                                 </ul>
                                             </li>
                                         </ul>
-                                    </li>
-                                @endcanany
+                                    @endcanany
+                                    @canany(['create building-staff', 'view building-staff'])
+                                        <ul>
+                                            <li>
+                                                <a href="#">Building Staffs<i class="metismenu-state-icon pe-7s-angle-down caret-left"></i></a>
+                                                <ul>
+                                                    @can('view building-staff')
+                                                        <li>
+                                                            <a href="{{ route('dashboard.building-staffs.index') }}">
+                                                                List
+                                                            </a>
+                                                        </li>
+                                                    @endcan
+                                                    @can('create building-staff')
+                                                        <li>
+                                                            <a href="{{ route('dashboard.building-staffs.create') }}">
+                                                                Create
+                                                            </a>
+                                                        </li>
+                                                    @endcan
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    @endcanany
+                                </li>
                             </ul>

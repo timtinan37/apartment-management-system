@@ -51,5 +51,10 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'view resident-staff', 'group' => 'resident-staff']);
         Permission::create(['name' => 'update resident-staff', 'group' => 'resident-staff']);
         Permission::create(['name' => 'delete resident-staff', 'group' => 'resident-staff']);
+
+        Permission::create(['name' => 'create building-staff', 'group' => 'building-staff']);
+        Permission::create(['name' => 'view building-staff', 'group' => 'building-staff']);
+        Permission::create(['name' => 'update building-staff', 'group' => 'building-staff']);
+        Permission::create(['name' => 'delete building-staff', 'group' => 'building-staff']);
     }
 }

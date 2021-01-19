@@ -4,7 +4,7 @@ namespace App\Http\Requests\Backend;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ResidentStaffRequest extends FormRequest
+class BuildingStaffRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,6 @@ class ResidentStaffRequest extends FormRequest
     public function rules()
     {
         return [
-            'resident' => ['required', 'integer'],
             'name' => ['required', 'string', 'min:2', 'max:255'],
             'designation' => ['required', 'string', 'min:2', 'max:255'],
             'phone' => ['required', 'string', 'min:5'],
